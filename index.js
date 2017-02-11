@@ -30,6 +30,23 @@ flock.events.on('app.uninstall', function (event) {
     delete tokens[event.userId];
 });
 
+flock.events.on('client.slashCommand', function (event) {
+    var token;
+    var user;
+    user = event.userId;
+    token = config.bottoken;
+
+    flock.chat.sendMessage(token, {
+        to: user,
+        text: 'hello'
+    }, function (error, response) {
+        if (error)
+            console.log('error: ', error);
+        else
+            console.log(response);
+    })
+});
+
 // Start the listener after reading the port from config
 var port = config.port || 8080;
 app.listen(port, function () {
