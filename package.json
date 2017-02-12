@@ -9,6 +9,7 @@
     "url": "https://github.com/flockchat/app-install-tutorial-nodejs.git"
   },
   "dependencies": {
+    "docusign-esign": "2.1.0",
     "express": "^4.14.0",
     "flockos": "^0.0.4"
   }
